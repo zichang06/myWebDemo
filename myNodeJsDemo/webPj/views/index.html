@@ -1,0 +1,63 @@
+{{extend './_layouts/home.html'}}
+
+{{block 'title'}}{{'日程管理'}}{{/block}}
+
+{{block 'body'}}
+<section class="container">
+  <h1 class="page-header">首页</h1>
+  <ul class="media-list">
+    <li class="media">
+      <div class="media-left">
+        <a href="#">
+            <img width="40" height="40" class="media-object" src="../public/img/avatar-default.png" alt="...">
+          </a>
+      </div>
+      <div class="media-body">
+        <h4 class="media-heading"><a href="/topics/123">今日新闻1</a></h4>
+        <p>李雷 • 2 人关注 • 1 个回复 • 187 次浏览 • 2019-12-3 7:45</p>
+      </div>
+    </li>
+    <li class="media">
+      <div class="media-left">
+        <a href="#">
+            <img width="40" height="40" class="media-object" src="../public/img/avatar-default.png" alt="...">
+          </a>
+      </div>
+      <div class="media-body">
+        <h4 class="media-heading"><a href="/topics/123">今日新闻2</a></h4>
+        <p>韩梅梅 • 2 人关注 • 1 个回复 • 187 次浏览 • 2019-12-3 8:45</p>
+      </div>
+    </li>
+    <li class="media">
+      <div class="media-left">
+        <a href="#">
+            <img width="40" height="40" class="media-object" src="../public/img/avatar-default.png" alt="...">
+          </a>
+      </div>
+      <div class="media-body">
+        <h4 class="media-heading"><a href="/topics/123">今日新闻3</a></h4>
+        <p>李华 • 2 人关注 • 1 个回复 • 187 次浏览 • 2019-12-3 9:45</p>
+      </div>
+    </li>
+  </ul>
+  <nav aria-label="Page navigation">
+    <ul class="pagination">
+      <li>
+        <a href="#" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+      </a>
+      </li>
+      <li class="active"><a href="#">1</a></li>
+      <li><a href="#">2</a></li>
+      <li><a href="#">3</a></li>
+      <li><a href="#">4</a></li>
+      <li><a href="#">5</a></li>
+      <li>
+        <a href="#" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+      </a>
+      </li>
+    </ul>
+  </nav>
+</section>
+{{/block}}

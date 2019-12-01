@@ -1,0 +1,50 @@
+{{extend './_layouts/home.html'}}
+
+{{block 'title'}}{{'日程管理'}}{{/block}}
+
+{{block 'body'}}
+<!-- Bootstrap core CSS -->
+<link href="/node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- Custom styles for this template -->
+<link href="/public/css/main_stu.css" rel="stylesheet">
+<section class="container">
+  <div class="container-fluid">
+      <div class="row">
+        <div class="main">
+          <h2 class="sub-header">日程管理</h2>
+          <a class="btn btn-success" href="/students/new">添加日程</a>
+          <a class="btn btn-primary" href="/">返回首页</a>
+          <div class="table-responsive">
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>任务</th>
+                  <th>已完成</th>
+                  <th>截止日期</th>
+                  <th>备注</th>
+                  <th>操作</th>
+                </tr>
+              </thead>
+              <tbody>
+                {{each students}}
+                <tr>
+                  <td>{{ $index + 1 }}</td>
+                  <td>{{ $value.taskName }}</td>
+                  <td>{{ $value.finish }}</td>
+                  <td>{{ $value.deadline }}</td>
+                  <td>{{ $value.others }}</td>
+                  <td>
+                    <a class="btn btn-info" href="/students/edit?id={{$value.id}}">编辑</a>
+                    <a class="btn btn-danger" href="/students/delete?id={{$value.id}}">删除</a>
+                  </td>
+                </tr>
+                {{/each}}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+{{/block}}

@@ -1,0 +1,47 @@
+{{extend './_layouts/home.html'}}
+
+{{block 'title'}}{{'日程管理'}}{{/block}}
+
+{{block 'body'}}
+<body>
+  <!-- Bootstrap core CSS -->
+  <link href="/node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href="/public/css/main_stu.css" rel="stylesheet">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="main info">
+        <h2 class="sub-header">编辑日程</h2>
+        <form action="/students/edit" method="post">
+          <!-- 不可见但可随表单提交到服务端的数据 -->
+          <input type="hidden" name="id"  value="{{student.id}}">
+          <div class="form-group">
+            <label for="">任务</label>
+            <input type="text" class="form-control" id="" name="taskName" required minlength="2" maxlength="100" value = "{{ student.taskName }}">
+          </div>
+          <div class="form-group">
+            <label for="">是否完成</label>
+            <div>
+              <label class="radio-inline">
+                <input type="radio" name="finish" id="" value="0" checked> 未完成
+              </label>
+              <label class="radio-inline">
+                <input type="radio" name="finish" id="" value="1"> 已完成
+              </label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="">截止日期</label>
+            <input class="form-control" type="text" id="" name="deadline"  value = "{{ student.deadline }}" required min="1" max="20">
+          </div>
+          <div class="form-group">
+            <label for="">备注</label>
+            <input class="form-control" type="text" id="" name="others"  value = "{{ student.others }}">
+          </div>
+          <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+{{/block}}
